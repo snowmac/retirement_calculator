@@ -17,9 +17,21 @@
     <div class="container">
 
       <div class="row">
-        <div class="col-md-12">
+        <div class="col-md-9">
           <h1> Welcome to Adam's retirement calculator </h1> 
           <p>Please supply some basic info about you!</p>
+        </div>
+        <div class="col-md-3">
+          <br />
+          <div class="btn-group">
+            <button type="button" class="btn btn-default dropdown-toggle" data-toggle="dropdown" aria-haspopup="true" aria-expanded="false">
+              Options <span class="caret"></span>
+            </button>
+            <ul class="dropdown-menu">
+              <li id="example1"><a href="#">Example 1</a></li>
+              <li id="example2"><a href="#">Example 2</a></li>
+            </ul>
+          </div>
         </div>
       </div>
 
@@ -100,7 +112,7 @@
       <div class="row" id="results">
         <h2> Results </h2>
         <div class="col-md-6">
-          <p>Based off of current savings of $<span id="cur_savings"></span>, and a monthly addition of $<span id="mon_add"></span>, you will have $<span id="savings"></span> by retirement. 
+          <p>Based off of current savings of $<span id="cur_savings"></span> and a monthly addition of $<span id="mon_add"></span> you will have $<span id="savings"></span> by retirement. 
         </div>
 
 
@@ -109,6 +121,8 @@
 
     </div><!-- /.container -->
   <script type="text/javascript" src="./app/index.js"></script>
+  <script type="text/javascript" src="./app/options.js"></script>
+  <script type="text/javascript" src="./app/compute_retirement.js"></script>
 
 </body>
 </html>

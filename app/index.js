@@ -14,6 +14,7 @@ $(document).ready(function(){
 
     var monies = current_savings; 
 
+    var year_collection = [];
 
     for(var i = 0; i < number_of_years; i++){
       monies = computeInterest(
@@ -22,11 +23,17 @@ $(document).ready(function(){
         12,
         1
       ); 
+
+      year_collection.push({
+        year: i,
+        saved: monies
+      });
+
     }
 
     $("#savings").html(numberWithCommas(monies.toFixed(2)));
-    $("#cur_savings").html(current_savings);
-    $("#mon_add").html(monthly_savings);
+    $("#cur_savings").html(numberWithCommas(current_savings));
+    $("#mon_add").html(numberWithCommas(monthly_savings));
   });
 
   var computeInterest = function(principal, rate, number_of_compounded, number_of_years){
@@ -49,7 +56,11 @@ $(document).ready(function(){
   };
 
   var numberWithCommas = function(x) {
-      return x.toString().replace(/\B(?=(\d{3})+(?!\d))/g, ",");
-  }
+    if(getNumber(x) < 10000) {
+      return x; 
+    }
+
+    return x.toString().replace(/\B(?=(\d{3})+(?!\d))/g, ",");
+  };
 
 });
