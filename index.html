@@ -65,6 +65,20 @@
           </div>
         </div>
 
+        <div class="col-md-2">
+          <div class="form-group">
+            <label>Retirement Rate:</label>
+            <input type="number" class="form-control" name="retirement_rate" value="5" />
+          </div>
+        </div>
+
+        <div class="col-md-2">
+          <div class="form-group">
+            <label>Expected Lifespan:</label>
+            <input type="number" class="form-control" name="lifespan" value="100" />
+          </div>
+        </div>
+
 
       </div>
 
@@ -114,6 +128,12 @@
         <div class="col-md-6">
           <p>Based off of current savings of $<span id="cur_savings"></span> and a monthly addition of $<span id="mon_add"></span> you will have $<span id="savings"></span> by retirement. 
         </div>
+
+        <div class="col-md-6">
+          <p> Assuming a growth of <span id="retirement_growth"></span>% during retirement, your spending of $<span id="annual_retirement_spending"></span> in retirement your money will last until you are: <span id="age_money_runs_out"></span>
+        </div>
+
+
 
 
       </div>
