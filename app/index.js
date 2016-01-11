@@ -1,5 +1,7 @@
 $(document).ready(function(){
   $("#compute_button").on("click", function(){
+    $("#results").hide();
+    $("#charts").hide();
     var current_age = getNumber($("input[name='current_age']").val());
     var retirement_age = getNumber($("input[name='retirement_age']").val());
     var rate = getNumber($("input[name='expected_return']").val());
@@ -71,6 +73,9 @@ $(document).ready(function(){
     $("#retirement_growth").html(retirement_rate); 
     $("#annual_retirement_spending").html(numberWithCommas(retirement_income.toFixed(2))); 
     $("#age_money_runs_out").html(expected_retirement_message);
+
+    $("#results").show();
+    $("#charts").show();
   });
 
   var computeInterest = function(principal, rate, number_of_compounded, number_of_years){
